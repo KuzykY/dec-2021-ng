@@ -57,4 +57,3 @@ export class MainInterceptor implements HttpInterceptor {
   }
 }
 }
-

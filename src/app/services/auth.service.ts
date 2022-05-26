@@ -26,7 +26,7 @@ export class AuthService {
 
   setToken(token: IToken): void {
     localStorage.setItem(this.accessTokenKey, token.access)
-    localStorage.setItem(this.refreshTokenKey,token.refresh)
+    localStorage.setItem(this.refreshTokenKey, token.refresh)
   }
 
   isAuthorization(): boolean {
@@ -42,14 +42,14 @@ export class AuthService {
   }
 
   deleteToken(): void {
-    return localStorage.removeItem(this.accessTokenKey)
+    localStorage.removeItem(this.accessTokenKey)
+    localStorage.removeItem(this.refreshTokenKey)
   }
 
-  refresh():Observable<IToken> {
+  refresh(): Observable<IToken> {
     const refresh = this.getRefreshToken();
-    return this.httpClient.post<IToken>(`${urls.auth}/refresh`, {refresh}).pipe(tap((token:IToken)=>{
+    return this.httpClient.post<IToken>(`${urls.auth}/refresh`, {refresh}).pipe(tap((token: IToken) => {
       this.setToken(token)
     }))
-
   }
 }
