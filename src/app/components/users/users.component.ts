@@ -9,8 +9,7 @@ import {IUser} from "../../interfaces/user.interface";
 })
 export class UsersComponent implements OnInit {
   users: IUser[]
-  @Output()
-  userEmitt = new EventEmitter<IUser>()
+
 
   constructor(private userService: UserService) {
   }
@@ -19,9 +18,6 @@ export class UsersComponent implements OnInit {
     this.userService.getUser().subscribe(value => this.users = value)
   }
 
-  catchUserEmitt($event: IUser): void {
-    this.userEmitt.emit($event)
 
-  }
 
 }

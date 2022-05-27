@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {IUser} from "./interfaces/user.interface";
+import {DataService} from "./services/data.service";
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,10 @@ import {IUser} from "./interfaces/user.interface";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  user: IUser
-
-  catch($event: IUser) {
-    this.user = $event;
+  user:IUser
+  constructor(private dataService:DataService) {
+    dataService.storage.subscribe(value => {
+      this.user=value
+    })
   }
 }
