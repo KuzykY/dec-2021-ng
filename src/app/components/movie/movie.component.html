@@ -1,7 +1,6 @@
 <div *ngIf="movie">
-  {{movie.original_title}}
   <div>
-    <img src="https://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" alt="logo_films">
+    <img src="https://image.tmdb.org/t/p/w300{{movie.backdrop_path}}" alt="logo_films">
   </div>
-  <div><a routerLink="{{movie.id}}">Details</a></div>
+  <div><a routerLink="{{movie.id}}">{{movie.original_title}}</a></div>
 </div>

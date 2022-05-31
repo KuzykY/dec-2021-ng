@@ -10,7 +10,6 @@ import {MovieComponent} from './components/movie/movie.component';
 import {MoviesComponent} from './components/movies/movies.component';
 import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
 import {StarsRatingComponent} from './components/stars-rating/stars-rating.component';
-import {PosterPreviewComponent} from './components/poster-preview/poster-preview.component';
 import {UserInfoComponent} from './components/user-info/user-info.component';
 import {GenreBadgeComponent} from './components/genre-badge/genre-badge.component';
 
@@ -26,7 +25,6 @@ import {AppRoutingModule} from "./app-routing.module";
     MoviesComponent,
     MovieDetailsComponent,
     StarsRatingComponent,
-    PosterPreviewComponent,
     UserInfoComponent,
     GenreBadgeComponent
   ],
