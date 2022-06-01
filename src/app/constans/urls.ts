@@ -1,7 +1,9 @@
 import {environment} from "../../environments/environment";
 
-const {API}=environment;
+const {API} = environment;
 
-export const urls={
-  movies:`${API}/discover/movie`
+export const urls = {
+  movies: `${API}/discover/movie`,
+  genres: `${API}/genre/movie/list`,
+  movieId: `${API}/movie/`
 }

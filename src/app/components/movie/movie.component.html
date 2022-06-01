@@ -1,7 +1,7 @@
 <div *ngIf="movie" class="wrap">
-  <div>
+  <div (click)="getDetails()" class="img_details">
     <img src="https://image.tmdb.org/t/p/w300{{movie.backdrop_path}}" alt="logo_films">
+    <h4>{{movie.original_title}}</h4>
   </div>
-  <div><a routerLink="{{movie.id}}">{{movie.original_title}}</a></div>
   <app-stars-rating></app-stars-rating>
 </div>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {GenreService} from "../../services/genre.service";
+import {IGenres} from "../../interfaces/genre.interface";
 
 @Component({
   selector: 'app-genre-badge',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./genre-badge.component.css']
 })
 export class GenreBadgeComponent implements OnInit {
+  genres: IGenres[];
 
-  constructor() { }
+  constructor(private genreService: GenreService) {
+  }
 
   ngOnInit(): void {
+    this.genreService.getAll().subscribe(value => this.genres = value.genres)
+
   }
 
 }
