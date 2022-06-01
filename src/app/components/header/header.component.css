@@ -1,6 +1,6 @@
 .header{
   display: flex;
-  background: cornflowerblue;
+  background: #c6d5f1;
   justify-content: space-evenly;
   height: 50px;
   align-items: center;
@@ -14,5 +14,7 @@ a{
   border-radius: 50px;
   width: 20px;
   padding-left: 7px;
-
+}
+.active{
+  color: #bf00ff;
 }
