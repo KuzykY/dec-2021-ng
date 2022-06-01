@@ -34,7 +34,8 @@ import { GenreComponent } from './components/genre/genre.component';
     BrowserModule,
     RouterModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
