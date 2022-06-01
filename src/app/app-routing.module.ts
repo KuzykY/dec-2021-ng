@@ -10,10 +10,8 @@ const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {path: '', redirectTo: 'movies', pathMatch: 'full'},
-      {
-        path: 'movies', component: MoviesComponent,
-        children: [{path: ':id', component: MovieDetailsComponent}]
-      },
+      {path: 'movies', component: MoviesComponent},
+      {path: 'movies/:id', component: MovieDetailsComponent},
       {path: 'genres', component: GenreBadgeComponent}
     ]
   }]
