@@ -5,6 +5,7 @@ import {MainLayoutComponent} from "./layouts/main-layout/main-layout.component";
 import {MoviesComponent} from "./components/movies/movies.component";
 import {MovieDetailsComponent} from "./components/movie-details/movie-details.component";
 import {GenreBadgeComponent} from "./components/genre-badge/genre-badge.component";
+import {MoviesByGenreComponent} from "./components/movies-by-genre/movies-by-genre.component";
 
 const routes: Routes = [
   {
@@ -12,7 +13,9 @@ const routes: Routes = [
       {path: '', redirectTo: 'movies', pathMatch: 'full'},
       {path: 'movies', component: MoviesComponent},
       {path: 'movies/:id', component: MovieDetailsComponent},
-      {path: 'genres', component: GenreBadgeComponent}
+      {path: 'genres', component: GenreBadgeComponent,children:[
+          {path:'moviebygenre',component:MoviesByGenreComponent}
+        ]}
     ]
   }]
 

@@ -20,4 +20,7 @@ export class MovieService {
   getAllByPage(page:number):Observable<any>{
     return this.httpClient.get<any>(`${urls.movies}?page=${page}`)
   }
+  getALlByGenre(genreId:number):Observable<{page: number; results: IMovies[]}>{
+    return  this.httpClient.get<{page: number; results: IMovies[]}>(urls.genres +`:${genreId}` + `/movies`)
+  };
 }

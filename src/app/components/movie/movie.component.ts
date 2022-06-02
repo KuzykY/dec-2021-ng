@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 import {IMovie} from "../../interfaces/movie.interface";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -9,6 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent implements OnInit {
+  @Output() mode = new EventEmitter<boolean>();
 
   @Input()
   movie:IMovie;

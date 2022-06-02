@@ -1,12 +1,10 @@
-<div class="wrap">
-  <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
+<div class="wrap" id="main-container" [ngClass]="[setMode ? 'darkTheme' : '']">
+  <app-movie *ngFor="let movie of movies" [movie]="movie" (mode)="receiveMode($event)"></app-movie>
 </div>
 <router-outlet></router-outlet>
-<div>
-  <button (click)="next()" *ngIf="page != 500">next page</button>
-  <p *ngIf="page">
-    Current page: {{page}}
-  </p>
-  <button (click)="prev()" *ngIf="page != 1">prev page</button>
+<div class="pagination">
+  <button (click)="next()" *ngIf="page != 500">Next page</button>
+  <p *ngIf="page">Current page: {{page}}</p>
+  <button (click)="prev()" *ngIf="page != 1">Previous page</button>
 </div>
 

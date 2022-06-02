@@ -6,23 +6,14 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  dark: boolean = false
-
-  @Output()
-  setDarkEmitter = new EventEmitter<boolean>()
+  @Output() mode = new EventEmitter<boolean>();
   constructor() { }
-
+  setDark = false;
   ngOnInit(): void {
   }
-
-  setDarkTheme(): void {
-
-    if (this.dark) {
-      this.dark = false
-      this.setDarkEmitter.emit(this.dark)
-    } else {
-      this.dark = true
-      this.setDarkEmitter.emit(this.dark)
-    }
+  onChangeToggle() {
+    this.setDark = !this.setDark;
+    this.mode.emit(this.setDark);
+    console.log(this.setDark);
   }
 }

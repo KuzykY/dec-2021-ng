@@ -16,6 +16,7 @@ import {GenreBadgeComponent} from './components/genre-badge/genre-badge.componen
 import {MainInterceptor} from "./main.interceptor";
 import {AppRoutingModule} from "./app-routing.module";
 import { GenreComponent } from './components/genre/genre.component';
+import { MoviesByGenreComponent } from './components/movies-by-genre/movies-by-genre.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { GenreComponent } from './components/genre/genre.component';
     StarsRatingComponent,
     UserInfoComponent,
     GenreBadgeComponent,
-    GenreComponent
+    GenreComponent,
+    MoviesByGenreComponent
   ],
   imports: [
     BrowserModule,

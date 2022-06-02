@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 
 import {IMovie} from "../../interfaces/movie.interface";
@@ -8,7 +8,8 @@ import {MovieService} from "../../services/movie.service";
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.css']
+  styleUrls: ['./movies.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class MoviesComponent implements OnInit {
   movies: IMovie[];
@@ -20,7 +21,6 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(value =>this.page = +value['page'])
-
 
     if (!this.page) {
       this.movieService.getAll().subscribe(value => {
@@ -46,6 +46,11 @@ export class MoviesComponent implements OnInit {
     this.movieService.getAllByPage(this.page).subscribe(value => {
       this.movies = value.results
     })
+  }
+  setMode = false;
+
+  receiveMode($event:any) {
+    this.setMode = $event;
   }
 }
 
