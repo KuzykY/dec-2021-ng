@@ -1,5 +1,5 @@
-<div class="wrap" id="main-container" [ngClass]="[setMode ? 'darkTheme' : '']">
-  <app-movie *ngFor="let movie of movies" [movie]="movie" (mode)="receiveMode($event)"></app-movie>
+<div class="wrap">
+  <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
 </div>
 <router-outlet></router-outlet>
 <div class="pagination">

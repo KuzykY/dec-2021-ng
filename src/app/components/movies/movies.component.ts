@@ -20,10 +20,10 @@ export class MoviesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe(value =>this.page = +value['page'])
+    this.activatedRoute.queryParams.subscribe(value => this.page = +value['page'])
 
     if (!this.page) {
-      this.movieService.getAll().subscribe(value => {
+      this.movieService.getAll(this.page = 1).subscribe(value => {
         this.movies = value.results
       })
     } else {
@@ -32,6 +32,7 @@ export class MoviesComponent implements OnInit {
       })
     }
   }
+
   next(): void {
     this.page = this.page + 1
 
@@ -40,17 +41,13 @@ export class MoviesComponent implements OnInit {
       this.movies = value.results
     })
   }
+
   prev() {
     this.page = this.page - 1
     this.router.navigate([''], {queryParams: {page: this.page}})
     this.movieService.getAllByPage(this.page).subscribe(value => {
       this.movies = value.results
     })
-  }
-  setMode = false;
-
-  receiveMode($event:any) {
-    this.setMode = $event;
   }
 }
 

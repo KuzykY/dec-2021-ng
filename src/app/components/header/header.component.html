@@ -5,6 +5,9 @@
   <div>
     <div class="userInfo">U</div>
     <div>Some User</div>
-</div>
-  <button (click)="onChangeToggle()">Toggle Theme</button>
+  </div>
+  <label class="switch">
+    <input type="checkbox" (change)="toggleDarkTheme()">
+    <span>Set dark theme</span>
+  </label>
 </div>

@@ -8,26 +8,3 @@
   align-items: center;
   justify-content: center;
 }
-#main-container{
-  width: 100%;
-  height: 100%;
-}
-#main-container.darkTheme {
-  background-color: #000;
-}
-
-#main-container.darkTheme h1{
-  color: white;
-}
-
-#main-container.darkTheme nav{
-  background-color: #fafafa;
-}
-
-#main-container.darkTheme .nav-link{
-  color: #000;
-}
-
-#main-container.darkTheme .nav-link.is-active{
-  color: #cb2d67;
-}
