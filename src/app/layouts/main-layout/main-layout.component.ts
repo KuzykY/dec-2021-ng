@@ -6,10 +6,12 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./main-layout.component.css']
 })
 export class MainLayoutComponent implements OnInit {
-
+  dark: boolean
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  catchTheme(value: boolean): void{
+    this.dark = value
+  }
 }

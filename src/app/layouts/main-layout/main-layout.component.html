@@ -1,5 +1,5 @@
-<div>
-  <app-header></app-header>
+<div [ngClass]="{darkTheme:dark}">
+  <app-header  (setDarkEmitter)="catchTheme($event)"></app-header>
 </div>
 <router-outlet></router-outlet>
 

@@ -2,3 +2,11 @@
   <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
 </div>
 <router-outlet></router-outlet>
+<div>
+  <button (click)="next()" *ngIf="page != 500">next page</button>
+  <p *ngIf="page">
+    Current page: {{page}}
+  </p>
+  <button (click)="prev()" *ngIf="page != 1">prev page</button>
+</div>
+

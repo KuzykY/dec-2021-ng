@@ -17,4 +17,7 @@ export class MovieService {
   getDetails(id:string):Observable<IMovie>{
     return this.httpClient.get<IMovie>(`${urls.movieId}${id}`)
   }
+  getAllByPage(page:number):Observable<any>{
+    return this.httpClient.get<any>(`${urls.movies}?page=${page}`)
+  }
 }
