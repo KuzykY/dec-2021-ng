@@ -1,4 +1,6 @@
-<div class>
-  <app-movie-by-genre
-    *ngFor="let movie of movies" [movie]="movie"></app-movie-by-genre>
+<div *ngIf="movies">
+  <div *ngFor="let movie of movies">
+    <img src="https://image.tmdb.org/t/p/w500/{{movie?.poster_path}}">
+    <div>{{movie.title}}</div>
+  </div>
 </div>

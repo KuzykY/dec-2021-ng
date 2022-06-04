@@ -10,19 +10,20 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class MoviesByGenreComponent implements OnInit {
   movies: IMovie[];
-  page: number = 1
+  page: number
 
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) {
   }
 
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(value => {
-      let id = value['id']
-      this.movieService.getMovieByGenre(id).subscribe(data => this.movies = data)
+    this.activatedRoute.params.subscribe(({id}) =>{
+      this.movieService.getMovieByGenre(id).subscribe(responce => {
+        const {results} = responce
+        this.movies=results
     })
-  }
+  })
 }
-
+}
 
 

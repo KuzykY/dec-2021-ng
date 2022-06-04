@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MovieService} from "../../services/movie.service";
 import {ActivatedRoute} from "@angular/router";
 import {IMovie} from "../../interfaces/movie.interface";
@@ -10,14 +10,14 @@ import {IGenres} from "../../interfaces/genre.interface";
   styleUrls: ['./movie-details.component.css']
 })
 export class MovieDetailsComponent implements OnInit {
-movie:IMovie
-  rate:number
-  genre:IGenres
-  constructor(private movieService:MovieService,private activatedRoute:ActivatedRoute) { }
+  movie: IMovie
+
+  constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({id})=>{
-      this.movieService.getDetails(id).subscribe((value)=>this.movie=value)
+    this.activatedRoute.params.subscribe(({id}) => {
+      this.movieService.getDetails(id).subscribe((value) => this.movie = value)
     })
 
   }

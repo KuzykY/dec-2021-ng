@@ -17,7 +17,6 @@ import {GenreBadgeComponent} from './components/genre-badge/genre-badge.componen
 import {MainInterceptor} from "./main.interceptor";
 import { GenreComponent } from './components/genre/genre.component';
 import { MoviesByGenreComponent } from './components/movies-by-genre/movies-by-genre.component';
-import { MovieByGenreComponent } from './components/movie-by-genre/movie-by-genre.component';
 
 
 @NgModule({
@@ -33,7 +32,6 @@ import { MovieByGenreComponent } from './components/movie-by-genre/movie-by-genr
     GenreBadgeComponent,
     GenreComponent,
     MoviesByGenreComponent,
-    MovieByGenreComponent,
   ],
     imports: [
         BrowserModule,
