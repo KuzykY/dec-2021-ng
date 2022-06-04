@@ -15,7 +15,6 @@ export class GenreBadgeComponent implements OnInit {
 
   ngOnInit(): void {
     this.genreService.getAll().subscribe(value => this.genres = value.genres)
-
   }
 
 }

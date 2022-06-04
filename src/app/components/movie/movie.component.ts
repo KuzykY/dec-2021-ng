@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 import {IMovie} from "../../interfaces/movie.interface";
 import {ActivatedRoute, Router} from "@angular/router";
+import {MovieService} from "../../services/movie.service";
 
 @Component({
   selector: 'app-movie',
@@ -9,20 +10,27 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent implements OnInit {
-  @Output() mode = new EventEmitter<boolean>();
-
+  rate: number
   @Input()
-  movie:IMovie;
-  constructor(private activatedRoute:ActivatedRoute,private router:Router) {
+  movie: IMovie;
+
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private movieService: MovieService) {
   }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(({id}) => {
+      this.movieService.getDetails(id).subscribe((movie) => {
+        this.rate = movie.vote_average
+        this.movie = movie
+      })
+    })
   }
 
   getDetails() {
-    this.activatedRoute.queryParams.subscribe(({page})=>{
-      this.router.navigate([`${this.movie.id}`],{relativeTo:this.activatedRoute,queryParams:{page}})
-        .then(()=>{})
+    this.activatedRoute.queryParams.subscribe(({page}) => {
+      this.router.navigate([`${this.movie.id}`], {relativeTo: this.activatedRoute, queryParams: {page}})
+        .then(() => {
+        })
     })
   }
 }

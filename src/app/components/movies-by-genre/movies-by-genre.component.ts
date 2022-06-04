@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MovieService} from "../../services/movie.service";
-import {IMovie, IMovies} from "../../interfaces/movie.interface";
+import {IMovie} from "../../interfaces/movie.interface";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-movies-by-genre',
@@ -8,11 +9,20 @@ import {IMovie, IMovies} from "../../interfaces/movie.interface";
   styleUrls: ['./movies-by-genre.component.css']
 })
 export class MoviesByGenreComponent implements OnInit {
-movie:IMovies[]
-  constructor(private movieService:MovieService) { }
+  movies: IMovie[];
+  page: number = 1
 
-  ngOnInit(): void {
-    this.movieService.getALlByGenre(28).subscribe(value => this.movie=value.results)
+  constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) {
   }
 
+
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe(value => {
+      let id = value['id']
+      this.movieService.getMovieByGenre(id).subscribe(data => this.movies = data)
+    })
+  }
 }
+
+
+

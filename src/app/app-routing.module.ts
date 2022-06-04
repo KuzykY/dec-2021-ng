@@ -15,7 +15,7 @@ const routes: Routes = [
       {path: 'movies', component: MoviesComponent},
       {path: 'movies/:id', component: MovieDetailsComponent},
       {path: 'genres', component: GenreBadgeComponent,children:[
-          {path:'moviebygenre',component:MoviesByGenreComponent}
+          {path:':id',component:MoviesByGenreComponent}
         ]}
     ]
   }]

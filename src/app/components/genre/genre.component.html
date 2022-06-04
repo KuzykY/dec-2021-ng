@@ -1,3 +1,5 @@
-<div *ngIf="genre">{{genre.name}}
-<button routerLink="moviebygenre">See All Movies</button>
+<div *ngIf="genre"><label class="">
+  {{genre.name}}
+</label>
+  <button (click)="getAllMoviesByGenre()">Get All Films By</button>
 </div>

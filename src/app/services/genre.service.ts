@@ -13,4 +13,7 @@ export class GenreService {
   getAll():Observable<any>{
     return this.httpClient.get<any>(urls.genres)
   }
+  // getMovieByGenre(id:number):Observable<any>{
+  //   return  this.httpClient.get<any>(`${urls.genres}?with_genres=${id}`)
+  // }
 }
