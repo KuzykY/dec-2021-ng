@@ -15,9 +15,7 @@ export class MoviesComponent implements OnInit {
   movies: IMovie[];
   page: number;
 
-  constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute, private router: Router) {
-
-  }
+  constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(value => this.page = +value['page'])

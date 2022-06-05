@@ -3,7 +3,7 @@
     <img src="https://image.tmdb.org/t/p/w300{{movie.backdrop_path}}" alt="logo_films">
     <h4>{{movie.original_title}}</h4>
   </div>
-<!--  <bar-rating [(rate)]="rate" [max]="5"></bar-rating>-->
-<!--  <bar-rating [(rate)]="rate" [max]="4" [theme]="'movie'" [showText]="true"-->
-<!--              [titles]="['Bad', 'Mediocre' , 'Good', 'Awesome']"></bar-rating>-->
+  <div>Average vote: {{movie.vote_average}}</div>
+  <div><ngx-star-rating ngModel="{{rating(movie.vote_average)}}" [id]="movie.id.toString()" [disabled]="true"></ngx-star-rating></div>
 </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

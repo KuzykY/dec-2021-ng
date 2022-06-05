@@ -1,6 +1,6 @@
 body {
    color: #333;
-  --bkg-color: #c6d5f1;
+  --bkg-color: #4f6691;
   margin: 0;
 }
 body.dark-theme {
@@ -11,5 +11,3 @@ body.dark-theme {
 body {
   background: var(--bkg-color);
 }
-
-

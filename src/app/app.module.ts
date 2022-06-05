@@ -17,6 +17,8 @@ import {GenreBadgeComponent} from './components/genre-badge/genre-badge.componen
 import {MainInterceptor} from "./main.interceptor";
 import { GenreComponent } from './components/genre/genre.component';
 import { MoviesByGenreComponent } from './components/movies-by-genre/movies-by-genre.component';
+import {NgxStarRatingModule} from "ngx-star-rating";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -39,6 +41,9 @@ import { MoviesByGenreComponent } from './components/movies-by-genre/movies-by-g
         HttpClientModule,
         AppRoutingModule,
         BarRatingModule,
+        NgxStarRatingModule,
+      ReactiveFormsModule,
+      FormsModule
 
     ],
   providers: [{
