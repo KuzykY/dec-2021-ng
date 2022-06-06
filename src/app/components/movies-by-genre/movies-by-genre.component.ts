@@ -10,7 +10,6 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class MoviesByGenreComponent implements OnInit {
   movies: IMovie[];
-  page: number
 
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) {
   }

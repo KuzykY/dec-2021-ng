@@ -14,8 +14,8 @@ export class MovieService {
   getAll(page: number = 1):Observable<IMovies>{
     return this.httpClient.get<IMovies>(urls.movies, {params: {page}})
   }
-  getDetails(id:string):Observable<IMovie>{
-    return this.httpClient.get<IMovie>(`${urls.movieId}${id}`)
+  getDetails(id:number):Observable<IMovie>{
+    return this.httpClient.get<IMovie>(`${urls.movieId}/${id}`)
   }
   getAllByPage(page:number):Observable<any>{
     return this.httpClient.get<any>(`${urls.movies}?page=${page}`)

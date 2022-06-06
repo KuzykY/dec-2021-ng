@@ -26,12 +26,11 @@ rating(avg:number):number{
   return Math.round(avg/2)
 }
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({id}) => {
-      this.movieService.getDetails(id).subscribe((movie) => {
-        this.rate = movie.vote_average
-        this.movie = movie
-      })
-    })
+    // this.activatedRoute.params.subscribe(({id}) => {
+    //   this.movieService.getDetails(id).subscribe((movie) => {
+    //     this.movie = movie
+    //   })
+    // })
   }
 
   getDetails() {
